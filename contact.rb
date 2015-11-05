@@ -20,6 +20,10 @@ class Contact
     new_contact = Contact.new(first_name, last_name, email, notes)
     @@contacts << new_contact
     end
+
+    def remove
+      @@contacts.delete_if { |contact| contact.id == self.id }
+    end
     
     #Prompting user of whether they are sure they would like to modify the contact"
     def self.modify_contact_check
