@@ -106,6 +106,10 @@ class Contact
         end
     end
 
+    def self.find(contact_id)
+        @@contacts.find { |contact| contact.id == contact_id }
+    end
+
     #display specific contact using id
     def self.display_contact
         puts "Enter ID of contact you would like to display."

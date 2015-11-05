@@ -1,22 +1,24 @@
 h1 {
 	margin-right: 20%;
 	margin-left: 25%;
-	color: lightblue;
+	color: black;
 	font-family: "Impact"
 }
 
 h2 {
+	font-style: italic;
 	margin-right: 20%;
 	margin-left: 40%;
 	font-size: 40px;
-	color: beige;
+	color: black;
+	border-bottom:2px solid black;
 }
 
 .container {
 	text-decoration: none;
 	font-size: 20px;
 	margin-bottom: 7px;
-	background-color: lightblue;
+	background-color: white;
 }
 
 /*.sansline {
@@ -29,7 +31,7 @@ h2 {
 	text-decoration: none;
 	margin-right: 10%;
 	font-family: Impact, Charcoal, sans-serif;
-	color: darkblue;
+	color: grey;
 
 }
 
@@ -44,15 +46,15 @@ footer a{
 
 
 div {
-	background-color: lightblue;
+	background-color: white;
 	border-bottom: 15px solid white;
-	border-top:30px solid white;
+	border-top:10px solid darkred;
 
 }
 
 
 body {
-	background-color: beige;
+	background-color: lightblue;
 	margin: 0;
 }
 
@@ -66,12 +68,12 @@ body {
 .list a {
 	text-decoration: none;
 	font-family: "impact", Helvetica, sans-serif;
-	color: black;
+	color: darkred;
 	font-size: 30px;
 }
 
 a:hover {
-	color: orange;
+	color: black;
 }
 
 li {
