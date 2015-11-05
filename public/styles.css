@@ -19,6 +19,7 @@ h2 {
 	font-size: 20px;
 	margin-bottom: 7px;
 	background-color: white;
+	margin-left: 20%;
 }
 
 /*.sansline {
@@ -27,12 +28,11 @@ h2 {
 
 }*/
 .sansline a{
-    margin-left: 1%;
+	margin-left: 1%;
 	text-decoration: none;
 	margin-right: 10%;
 	font-family: Impact, Charcoal, sans-serif;
 	color: grey;
-
 }
 
 footer a{
