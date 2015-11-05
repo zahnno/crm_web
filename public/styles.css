@@ -1,0 +1,82 @@
+h1 {
+	margin-right: 20%;
+	margin-left: 25%;
+	color: lightblue;
+	font-family: "Impact"
+}
+
+h2 {
+	margin-right: 20%;
+	margin-left: 40%;
+	font-size: 40px;
+	color: beige;
+}
+
+.container {
+	text-decoration: none;
+	font-size: 20px;
+	margin-bottom: 7px;
+	background-color: lightblue;
+}
+
+/*.sansline {
+	margin-left: 25%;
+	margin-right:25%;
+
+}*/
+.sansline a{
+    margin-left: 1%;
+	text-decoration: none;
+	margin-right: 10%;
+	font-family: Impact, Charcoal, sans-serif;
+	color: darkblue;
+
+}
+
+footer a{
+	text-decoration: none;
+	float: right;
+	margin-right: 1%;
+	margin-top: 15px;
+	color: black;
+	
+}
+
+
+div {
+	background-color: lightblue;
+	border-bottom: 15px solid white;
+	border-top:30px solid white;
+
+}
+
+
+body {
+	background-color: beige;
+	margin: 0;
+}
+
+.list {
+	text-decoration: none;
+	list-style-type: none;
+	margin-right: 40%;
+	margin-left: 37%;
+}
+
+.list a {
+	text-decoration: none;
+	font-family: "impact", Helvetica, sans-serif;
+	color: black;
+	font-size: 30px;
+}
+
+a:hover {
+	color: orange;
+}
+
+li {
+	text-decoration: none;
+	font-size: 22px;
+	margin-bottom: 15%;
+}
+

@@ -19,3 +19,4 @@ post '/contacts' do
   Contact.create(params[:first_name], params[:last_name], params[:email], params[:notes])
   redirect to('/contacts')
 end
+
