@@ -2,7 +2,8 @@ h1 {
 	margin-right: 20%;
 	margin-left: 25%;
 	color: black;
-	font-family: "Impact"
+	font-family: "Impact";
+	font-style: italic;
 }
 
 h2 {
@@ -44,11 +45,18 @@ footer a{
 	
 }
 
+.forming {
+	float:left;
+	margin-right:20px;
+}
 
-div {
+
+.main {
 	background-color: white;
 	border-bottom: 15px solid white;
-	border-top:10px solid darkred;
+	border-top:10px solid darkorange;
+	border-left: 15px solid darkorange;
+	margin-left: 30%;
 
 }
 
@@ -68,7 +76,7 @@ body {
 .list a {
 	text-decoration: none;
 	font-family: "impact", Helvetica, sans-serif;
-	color: darkred;
+	color: darkorange;
 	font-size: 30px;
 }
 

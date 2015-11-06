@@ -1,5 +1,19 @@
-require_relative 'contact'
+require 'data_mapper'
 require 'sinatra'
+
+DataMapper.setup(:default, 'sqlite:crm_development.db')
+
+class Contact
+	include DataMapper::Resource
+
+	property :id, Serial
+	property :first_name, String
+	property :last_name, String
+	property :email, String
+	property :notes, Text
+end
+
+DataMapper.auto_upgrade!
 
 get '/' do 
 	@crm_app_name = "My CRM"
@@ -7,6 +21,7 @@ get '/' do
 end
 
 get '/contacts' do
+	@contacts = Contact.all
     erb :contacts
 end
 
@@ -14,14 +29,13 @@ get '/contacts/new' do
 	erb :new_contact
 end
 
-# at the end of the file
 post '/contacts' do
-  Contact.create(params[:first_name], params[:last_name], params[:email], params[:notes])
+  Contact.create(params)
   redirect to('/contacts')
 end
 
 get '/contacts/:id' do
-	@contact = Contact.find(params[:id].to_i)
+	@contact = Contact.get(params[:id].to_i)
 	if @contact
 	  erb :show_contact
 	else
@@ -31,36 +45,39 @@ end
 
 
 get '/contacts/:id/edit' do
-	@contact = Contact.find(params[:id].to_i)
+	@contact = Contact.get(params[:id].to_i)
 	if @contact
 		erb :edit_contact
 	else
-		raise Sinatra::NotFound
+		"raise Sinatra::NotFound"
 	end
 end
 
-
-put "/contacts/:id" do
-	@contact = Contact.find(params[:id].to_i)
+delete '/contacts/:id' do
+	@contact= Contact.get(params[:id].to_i)
 	if @contact
-	   @contact.first_name = params[:first_name]
-       @contact.last_name = params[:last_name]
-       @contact.email = params[:email]
-       @contact.note = params[:note]
+	@contact.destroy
+    redirect to('/contacts')
+	else
+	raise Sinatra::NotFound
+end
 
+end
+
+put '/contacts/:id' do
+	@contact = Contact.get(params[:id].to_i)
+	if @contact
+		@contact.update(
+	   :first_name => params[:first_name],
+       :last_name => params[:last_name],
+       :email => params[:email],
+       :notes => params[:notes]
+       )
        redirect to("/contacts")
      else
        raise Sinatra::NotFound
      end
 end
 
-delete "/contacts/:id" do
-  @contact = Contact.find(params[:id].to_i)
-  if @contact
-    @contact.remove
-    redirect to("/contacts")
-  else
-    raise Sinatra::NotFound
-  end
-end
+
 
